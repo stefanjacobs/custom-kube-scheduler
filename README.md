@@ -133,4 +133,4 @@ forward and the custom scheduler is kind of an edge case, I guess.
 
 ## Author
 
-Contact <me@mail: stefan_j(hat)gmx.de>
+Contact <stefan_j@gmx.de>
