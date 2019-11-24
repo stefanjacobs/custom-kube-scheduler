@@ -37,7 +37,8 @@ not able to evict. E.g. Build Jobs, Test Runs or Batch Jobs. The default
 scheduler of Kubernetes tries to achieve an even distribution of jobs over
 all compute instances. In cases where you want to save compute instances that
 may not be the optimal job distribution. Here comes this custom scheduler into
-play. You can distribute those deployments with other priorities given by the standard `kube-scheduler` that can be customized using this helm chart.
+play. You can distribute those deployments with other priorities given by the 
+standard `kube-scheduler` that can be customized using this helm chart.
 
 ## Prerequisites Details
 
@@ -45,7 +46,7 @@ None. You should have the need to do something like that, of course...
 
 ## Installing the Chart
 
-The helm chart can be installed as follows. Assuming that the name 
+The helm chart can be installed as follows. Assuming that the name
 of the chart is `my-custom-scheduler`, you just install it using:
 
 ```console
@@ -120,16 +121,22 @@ $ make test
 There are two tests for the chart:
 
 - Check, if the scheduler has started and does its job using an example pod
-- Check, that an example pod with a non existing scheduler does not start (but installing of course this custom scheduler)
+- Check, that an (failing) example pod configured with a non existing scheduler
+  stays pending and actually does not start (but installing of course this
+  custom scheduler)
 
-Both test are implemented stupidly in Makefile as bash-script... Helm Testing seems not to be straight
-forward and the custom scheduler is kind of an edge case, I guess.
+Both test are implemented stupidly in Makefile as bash-script... Helm Testing
+seems not to be straight forward for this use case and this custom scheduler
+is kind of an edge case, I guess.
 
 ## References
 
-- Kubernetes example of running multiple schedulers: <https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/>
-- Kubernetes Scheduler policies and filters: <https://kubernetes.io/docs/concepts/scheduling/kube-scheduler/>
-- Kubernetes Scheduler command line reference: <https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/>
+- Kubernetes example of running multiple schedulers: 
+  <https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/>
+- Kubernetes Scheduler policies and filters: 
+  <https://kubernetes.io/docs/concepts/scheduling/kube-scheduler/>
+- Kubernetes Scheduler command line reference: 
+  <https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/>
 
 ## Author
 
